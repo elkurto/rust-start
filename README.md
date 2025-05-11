@@ -1,5 +1,43 @@
 # Learn Rust 2025
 
+### Install Rust
+```bash
+# follow the instructions on https://www.rust-lang.org/tools/install
+# 1. install cargo and rust kit via rustup  
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# 2. add ${HOME}/.cargo to ${PATH}
+export PATH=${PATH}:${HOME}/.cargo
+
+# 3. here's the directory structure that rustup created.
+  tree ${HOME}/.cargo -L 2
+  
+  
+    .cargo
+     ├── bin
+     │  ├── cargo -> rustup
+     │  ├── cargo-clippy -> rustup
+     │  ├── cargo-fmt -> rustup
+     │  ├── cargo-miri -> rustup
+     │  ├── clippy-driver -> rustup
+     │  ├── rls -> rustup
+     │  ├── rust-analyzer -> rustup
+     │  ├── rustc -> rustup
+     │  ├── rustdoc -> rustup
+     │  ├── rustfmt -> rustup
+     │  ├── rust-gdb -> rustup
+     │  ├── rust-gdbgui -> rustup
+     │  ├── rust-lldb -> rustup
+     │  └── rustup
+     ├── env
+     └── registry
+         ├── cache
+         ├── CACHEDIR.TAG
+         ├── index
+         └── src
+
+```
+
 ### Build and Run A Rust Project
 
 ```bash
