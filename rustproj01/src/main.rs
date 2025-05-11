@@ -46,7 +46,7 @@ fn print_format_03_named_args() {
 }
 
 fn print_format_04_format_numbers() {
-  
+  // see https://doc.rust-lang.org/rust-by-example/hello/print.html
   println!("\nprint_format_04_format_numbers()");
   println!("  Base 10:               {}",   69420); // 69420
   println!("  Base 2 (binary):       {:b}", 69420); // 10000111100101100
