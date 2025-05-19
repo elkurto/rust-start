@@ -60,8 +60,8 @@ cd ./hello_rust_proj
 cargo build
 
 # 3. run the project
-./target/debug/hello_rust_proj
-
+# run the debug exe at ./target/debug/hello_rust_proj
+cargo run
   # output:
   # hello world
 
