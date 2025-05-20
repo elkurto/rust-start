@@ -18,6 +18,7 @@ fn main() {
 
     ex00_c_like_struct_person_and_rect();
     ex01_enum();
+    ex02_enum_type_alias();
 }
 
 fn ex00_c_like_struct_person_and_rect() {
@@ -114,3 +115,36 @@ fn ex01_enum() {
     //     page unloaded
 }
 
+
+
+enum VeryVerboseEnumOfThingsToDoWithNumbers {
+    Add,
+    Subtract,
+}
+
+impl VeryVerboseEnumOfThingsToDoWithNumbers {
+    fn run(&self, x: i32, y: i32) -> i32 {
+        match self {
+            Self::Add => x + y,
+            Self::Subtract => x - y,
+        }
+    }
+}
+
+// Creates a type alias
+type Operations = VeryVerboseEnumOfThingsToDoWithNumbers;
+
+
+fn ex02_enum_type_alias() {
+    println!("\nex02_type_alias()");
+    let mut result =Operations::Add.run(100, 23); // 123
+    println!("  Operations::Add::run(100, 23) ={}", result);
+
+    result = Operations::Subtract.run(10000, 1); // 9999
+    println!("  Operations::Subtract(10000, 1) ={}", result);
+
+    // ouptut:
+    // ex02_type_alias()
+    //   Operations::Add::run(100, 23) =123
+    //   Operations::Subtract(10000, 1) =9999
+}
