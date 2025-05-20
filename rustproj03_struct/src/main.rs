@@ -19,6 +19,7 @@ fn main() {
     ex00_c_like_struct_person_and_rect();
     ex01_enum();
     ex02_enum_type_alias();
+    ex03_enum_c_like_explicit_discriminator();
 }
 
 fn ex00_c_like_struct_person_and_rect() {
@@ -136,6 +137,7 @@ type Operations = VeryVerboseEnumOfThingsToDoWithNumbers;
 
 
 fn ex02_enum_type_alias() {
+    // https://doc.rust-lang.org/rust-by-example/custom_types/enum.html#type-aliases
     println!("\nex02_type_alias()");
     let mut result =Operations::Add.run(100, 23); // 123
     println!("  Operations::Add::run(100, 23) ={}", result);
@@ -147,4 +149,40 @@ fn ex02_enum_type_alias() {
     // ex02_type_alias()
     //   Operations::Add::run(100, 23) =123
     //   Operations::Subtract(10000, 1) =9999
+}
+
+// enum with implicit discriminator (starts at 0)
+enum Number {
+    Zero,
+    One,
+    Two,
+}
+
+// enum with explicit discriminator
+enum Color {
+    Red = 0xff0000,
+    Green = 0x00ff00,
+    Blue = 0x0000ff,
+}
+
+fn ex03_enum_c_like_explicit_discriminator() {
+    println!("\nex03_enum_c_like_explicit_discriminator()\n");
+
+    println!("  Number::Zero = {}", Number::Zero as i32);  // 0
+    println!("  Number::One = {}", Number::One as i32);    // 1
+    println!("  Number::Two = {}", Number::Two as i32);    // 2
+
+    println!("\n  Color::Red = #{:06x}", Color::Red as i32);   // 0xff0000
+    println!("  Color::Green = #{:06x}", Color::Green as i32); // 0x00ff00
+    println!("  Color::Blue = #{:06x}",  Color::Blue as i32);  // 0x0000ff
+
+    // ex03_enum_c_like_explicit_discriminator()
+    //
+    //     Number::Zero = 0
+    //     Number::One = 1
+    //     Number::Two = 2
+    //
+    //     Color::Red = #ff0000
+    //     Color::Green = #00ff00
+    //     Color::Blue = #0000ff
 }
