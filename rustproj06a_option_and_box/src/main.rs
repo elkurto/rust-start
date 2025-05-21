@@ -44,5 +44,7 @@ fn main() {
     if quotient.is_some() {  // same as quotient != None
         println!("quotient ={:?}", quotient);  // quotient =Some(2)
         println!("quotient.unwrap() ={:?}", quotient.unwrap());  // quotient.unwrap =2
+    }else if quotient == None {
+        println!("quotient none");
     }
 }
