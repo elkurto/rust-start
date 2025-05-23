@@ -106,10 +106,14 @@ fn main( ) {
   assert_eq!(buffer.buf.len(), 0);
 
 }
-
-
-
 ```
+
+#### rustc --explain {errorcode}
+- When rustc spits out -- warnings and errors , there's a way to acquire more info; <br/>
+  - `rustc --explain {errorcode}`
+  - for example: 
+    - `rustc --explain E0382`    
+
 
 ### References
 1. [Install Rust using rustup](https://www.rust-lang.org/tools/install)
