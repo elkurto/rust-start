@@ -6,16 +6,20 @@ pub struct NodeInt32 {
 }
 
 impl NodeInt32 {
+  // example:
+  //   let n1 =NodeInt32::new( 5 );
   pub fn new(val:i32) -> NodeInt32 {
     return NodeInt32 {val, next: None};
   }
+
+
 }
 
 impl fmt::Display for NodeInt32 {
   fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
     // I needed to use Option::unwrap (@see https://doc.rust-lang.org/std/option/enum.Option.html#method.unwrap)
     // and to use Option::as_ref (@see https://doc.rust-lang.org/std/option/enum.Option.html#method.as_ref)
-    
+
     if self.next.is_some() {
       write!(f, "{},{}", self.val, self.next.as_ref().unwrap())
     }else {
